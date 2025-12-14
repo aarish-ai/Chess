@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Glass Chess</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="modeOverlay" class="overlay">
+  <div class="overlay-box">
+    <h2>Choose Game Mode</h2>
+    <button id="twoBtn">Two Players</button>
+    <button id="aiBtn">Play vs AI</button>
+  </div>
+</div>
+
+  <div class="container">
+    <header>
+      <h1>Glass Chess</h1>
+      <div id="status" class="status">White to move</div>
+    </header>
+
+    <main>
+      <div id="board" class="board"></div>
+
+      <aside class="panel">
+        <button id="resetBtn" class="btn">New Game</button>
+        <div class="meta">
+          <div>Turn <span id="turnNo">1</span></div>
+          <div id="lastMove">—</div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- promotion picker (hidden until needed) -->
+    <div id="promo" class="promo-overlay hidden">
+      <div class="promo-box">
+        <p>Pawn promotion!</p>
+        <div class="promo-pieces">
+          <span data-piece="q"></span>
+          <span data-piece="r"></span>
+          <span data-piece="b"></span>
+          <span data-piece="n"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
